@@ -1,0 +1,13 @@
+{
+  "sdk": {
+    "ingest": {
+      "newsApiKey": "",
+      "excludedSources": []
+    },
+    "parsing": {
+      "numberOfTopicsToGenerate": 5
+    },
+    "models": {},
+    "summary": {}
+  }
+}

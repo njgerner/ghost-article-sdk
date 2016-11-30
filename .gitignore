@@ -1,0 +1,5 @@
+node_modules/
+.idea/
+
+config/test.json
+config/test-local.json
