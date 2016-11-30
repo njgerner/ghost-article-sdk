@@ -5,7 +5,7 @@
       "excludedSources": []
     },
     "parsing": {
-      "numberOfTopicsToGenerate": 5
+      "numberOfTopicsToGenerate": 3
     },
     "models": {},
     "summary": {}

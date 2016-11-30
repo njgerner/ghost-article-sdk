@@ -3,7 +3,7 @@ const Chai = require('chai');
 const expect = Chai.expect;
 const Config = require('config');
 
-const ArticleTextHelper = require('../../../../helpers/articleTextHelper');
+const ArticleTextHelper = require('../helpers/articleTextHelper');
 const GhostArticleSDK = require('../../index');
 const GhostArticleSDKClient = new GhostArticleSDK(Config.get('sdk'));
 const service = GhostArticleSDKClient.ParsingService;
