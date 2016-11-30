@@ -25,17 +25,22 @@
   "author": "Nick Gerner",
   "license": "ISC",
   "dependencies": {
+    "article-parser": "^1.5.3",
     "bluebird": "^3.4.6",
+    "config": "^1.24.0",
     "emoji-emotion": "^1.1.0",
+    "lda": "^0.1.9",
     "lodash": "^4.17.2",
     "node-fetch": "^1.6.3",
     "node-summary": "^1.1.0",
+    "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "sentiment": "^2.1.0",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chance": "^1.0.4",
     "mocha": "^3.2.0"
   }
 }

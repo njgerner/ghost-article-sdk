@@ -4,8 +4,9 @@ const expect = Chai.expect;
 const Config = require('config');
 
 const ArticleTextHelper = require('../../../../helpers/articleTextHelper');
-const ServiceLocator = require('../../../../../server/services/serviceLocatorFactory').getServiceLocatorSingleton();
-const service = ServiceLocator.getArticleParsingService();
+const GhostArticleSDK = require('../../index');
+const GhostArticleSDKClient = new GhostArticleSDK(Config.get('sdk'));
+const service = GhostArticleSDKClient.ParsingService;
 
 describe('ArticleParsingService', function () {
   this.timeout(10000);

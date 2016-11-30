@@ -1,1 +1,1 @@
-require('./lib/GhostArticleSDKClientFactory');
+module.exports = require('./lib/GhostArticleSDKClientFactory');

@@ -3,11 +3,10 @@ const Chai = require('chai');
 const expect = Chai.expect;
 const Config = require('config');
 
-const ServiceLocator = require('../../../../../server/services/serviceLocatorFactory').getServiceLocatorSingleton();
-const service = ServiceLocator.getAFINNModelService();
+const GhostArticleSDK = require('../../index');
+const GhostArticleSDKClient = new GhostArticleSDK(Config.get('sdk'));
+const service = GhostArticleSDKClient.AFINNModelService;
 
-describe('APINNModelService', function () {
-
-
+describe('AFINNModelService', function () {
 
 });
