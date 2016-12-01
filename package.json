@@ -7,7 +7,7 @@
     "test": "NODE_ENV=test mocha ./test --recursive",
     "test:grep": "NODE_ENV=test mocha ./test --recursive --grep",
     "test:ingest": "NODE_ENV=test mocha ./test/ingest --recursive",
-    "test:model": "NODE_ENV=test mocha ./test/model --recursive",
+    "test:models": "NODE_ENV=test mocha ./test/models --recursive",
     "test:parsing": "NODE_ENV=test mocha ./test/parsing --recursive",
     "test:summary": "NODE_ENV=test mocha ./test/summary --recursive"
   },
