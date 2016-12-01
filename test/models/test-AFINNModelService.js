@@ -40,9 +40,9 @@ describe('AFINNModelService', function () {
       .then(result => {
         expect(result).to.exist;
         expect(result).to.be.an('object');
-        expect(result).to.contain.keys(['score', 'emoji']);
+        expect(result).to.contain.keys(['score', 'emojis']);
         expect(result.score).to.be.a('number');
-        expect(result.emoji).to.be.a('string');
+        expect(result.emojis).to.be.an('array');
       })
     });
 
@@ -52,9 +52,9 @@ describe('AFINNModelService', function () {
       .then(result => {
         expect(result).to.exist;
         expect(result).to.be.an('object');
-        expect(result).to.contain.keys(['score', 'emoji']);
+        expect(result).to.contain.keys(['score', 'emojis']);
         expect(result.score).to.be.a('number');
-        expect(result.emoji).to.be.a('string');
+        expect(result.emojis).to.be.an('array');
       })
     });
 
