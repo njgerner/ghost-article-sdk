@@ -14,7 +14,7 @@ describe('ArticleParsingService', function () {
   describe('extractFromUrl', () => {
     
     it('should extract article information from a url', () => {
-      const url = "https://techcrunch.com/2016/11/18/google-reverses-its-digital-death-sentence-for-pixel-phone-resellers";
+      const url = "http://www.nationalreview.com/article/443227/consumer-financial-protection-bureau-tragic-failures";
       
       return service.extractFromUrl(url)
       .then(articleInfo => {
@@ -47,6 +47,21 @@ describe('ArticleParsingService', function () {
         expect(topics).to.be.an('array');
         expect(topics.length).to.be.eql(3);
         expect(topics).to.be.eql(result);
+      })
+    });
+
+  });
+
+  describe('extractTitleCaptionAndContentFromUrl', () => {
+
+    it('should return a title, caption and article content from a url', () => {
+      const url = 'https://www.nationalreview.com/magazine/2016-12-31-0000/donald-trump-job-conservatives';
+      return service.extractTitleCaptionAndContentFromUrl(url)
+      .then(result => {
+        expect(result).to.exist;
+        expect(result.title).to.exist;
+        expect(result.caption).to.exist;
+        expect(result.content).to.exist;
       })
     });
 
