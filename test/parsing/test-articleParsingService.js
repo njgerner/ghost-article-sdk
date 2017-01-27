@@ -62,7 +62,23 @@ describe('ArticleParsingService', function () {
         expect(result.title).to.exist;
         expect(result.caption).to.exist;
         expect(result.content).to.exist;
+      });
+    });
+
+    it('should return a title, caption and article from a url with options passed in', () => {
+      const url = 'http://www.nationalreview.com/article/444325/state-department-staffers-resignation';
+      return service.extractTitleCaptionAndContentFromUrl(url, {
+        excludeRegex: new RegExp('(, by\\s)[A-Za-z\\s]+(, National Review)'),
+        decodeCharacterReferences: true,
+        cleanHtml: true,
+        replaceDoubleQuotes: true
       })
+      .then(result => {
+        expect(result).to.exist;
+        expect(result.title).to.exist;
+        expect(result.caption).to.exist;
+        expect(result.content).to.exist;
+      });
     });
 
   });
@@ -80,5 +96,30 @@ describe('ArticleParsingService', function () {
     });
     
   });
-  
+
+  describe("decodeCharacterReferences", () => {
+    it('should remove character references', () => {
+      const str = 'Leave aside the distractions about crowd sizes and vote fraud. There is an aspect to Trump&#x2019;s egotism that is more than unseemly or clownish; it&#x2019;s aggressive.';
+      const expectedResult = "Leave aside the distractions about crowd sizes and vote fraud. There is an aspect to Trump’s egotism that is more than unseemly or clownish; it’s aggressive.";
+      const result = service.decodeCharacterReferences(str, true);
+      expect(result).to.be.equal(expectedResult);
+    });
+
+    it('should not remove character references if the activation flag is not passed in', () => {
+      const str = 'Leave aside the distractions about crowd sizes and vote fraud. There is an aspect to Trump&#x2019;s egotism that is more than unseemly or clownish; it&#x2019;s aggressive.';
+      const result = service.decodeCharacterReferences(str);
+      expect(result).to.be.equal(str);
+    });
+  });
+
+  describe('removeRegexString', () => {
+    it('should remove from string as defined in regex', () => {
+      const str = 'The State of State, by Luke Thompson, National Review';
+      const regex = new RegExp('(, by\\s)[A-Za-z\\s]+(, National Review)');
+
+      const result = service.removeRegexString(str, regex);
+      expect(result).to.be.equal('The State of State');
+
+    });
+  });
 });

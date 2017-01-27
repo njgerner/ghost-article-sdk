@@ -1,6 +1,6 @@
 {
   "name": "ghost-article-sdk",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Ghost Creative Article SDK for Node.js",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "bluebird": "^3.4.6",
     "config": "^1.24.0",
     "emoji-emotion": "^1.1.0",
+    "he": "^1.1.1",
     "lda": "^0.1.9",
     "lodash": "^4.17.2",
     "node-fetch": "^1.6.3",
