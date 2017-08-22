@@ -55,9 +55,10 @@ describe('ArticleParsingService', function () {
   describe('extractTitleCaptionAndContentFromUrl', () => {
 
     it('should return a title, caption and article content from a url', () => {
-      const url = 'https://www.nationalreview.com/magazine/2016-12-31-0000/donald-trump-job-conservatives';
+      const url = 'http://www.nationalreview.com/article/445686/isis-syria-us-military-may-soon-defeat-isis-what-comes-next';
       return service.extractTitleCaptionAndContentFromUrl(url)
       .then(result => {
+        console.log(result)
         expect(result).to.exist;
         expect(result.title).to.exist;
         expect(result.caption).to.exist;
@@ -66,7 +67,7 @@ describe('ArticleParsingService', function () {
     });
 
     it('should return a title, caption and article from a url with options passed in', () => {
-      const url = 'http://www.nationalreview.com/article/444325/state-department-staffers-resignation';
+      const url = 'http://www.nationalreview.com/article/445678/miguel-de-cervantes-invention-fiction-william-egginton-book-review';
       return service.extractTitleCaptionAndContentFromUrl(url, {
         excludeRegex: new RegExp('(, by\\s)[A-Za-z\\s]+(, National Review)'),
         decodeCharacterReferences: true,
@@ -75,6 +76,9 @@ describe('ArticleParsingService', function () {
       })
       .then(result => {
         expect(result).to.exist;
+        console.log(result.title)
+        console.log(result.caption)
+        console.log(result.content)
         expect(result.title).to.exist;
         expect(result.caption).to.exist;
         expect(result.content).to.exist;
